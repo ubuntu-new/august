@@ -1,0 +1,34 @@
+{
+    "navs": {
+      "about": {"title": "About Us", "link": "about"}, 
+      "shop": {"title": "Shop", "link": "shop"}, 
+      "blog": {"title": "Blog", "link": "blog"},
+      "contact": {"title": "Contact", "link": "contact"}, 
+      "faq": {"title": "FAQ", "link": "faq"},
+      "login": "Login",
+      "logout": "Logout",
+      "signup": "Signup"
+    },
+    "cartItems": {
+      "price": "Price",
+      "choosePaymentMethod": "Choose Payment Method",
+      "payByCard": "Pay By Card",
+      "payByCash": "Pay By Cash",
+      "details": "Details",
+      "fullPrice": "Full Price",
+      "buy": "Buy",
+      "product": "Product",
+      "quantity": "Quantity",
+      "bag": "Your Cart",     
+      "аdditionalInfo": "Additiona lInfo",
+      "checkout": "Checkout",
+      "writeComment": "Write a Comment",
+      "district": "Enter District",
+      "address": "Address",
+      "city": "City",
+      "email": "Email Address",
+      "phone": "Phone number",
+      "proceed": "Proceed",
+      "comment": "Comment"
+    }
+  }

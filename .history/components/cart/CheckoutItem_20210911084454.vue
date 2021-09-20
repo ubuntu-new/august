@@ -1,0 +1,204 @@
+<template>
+<div>
+    <!-- Start Page Title Area -->
+    <div class="container p-0 desktopiza">
+        <!-- Start Cart Area -->
+        <div class="cart-area ptb-60  backgroundWhite">
+            <div class="container">
+                <form>
+                    <div class="row ">
+                        <div class="col-lg-9 col-sm-12 checkout-details ">
+                            <div class="rectangle">
+                                <h3 class="title"> {{$t('cartItems.choosePaymentMethod')}}</h3>
+
+                            </div>
+                            <div class="row">
+                                <div class="payButtonebi">
+                                    <div class="cardButt" @click="sendPayment('card')">
+                                        <span>
+                                            {{$t('cartItems.payByCard')}}
+                                        </span>
+                                    </div>
+                                    <div class="cardButt" @click="sendPayment('cash')">
+                                        {{$t('cartItems.payByCash')}}
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-12 backgroundGray short">
+                            <div class="racxa">
+                                <div class="cart-table table-responsive">
+                                    <table class="table table-bordered webertela">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">{{$t('cartItems.details')}}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>{{$t('cartItems.fullPrice')}}<span style="float:right"><b>${{parseFloat(cartTotal + 10).toFixed(2)}}</b></span></td>
+                                            </tr>
+                                            <nuxt-link to="/checkout" class="btn btn-checkout">Buy</nuxt-link>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- End Cart Area -->
+    </div>
+
+
+
+     <div class="container p-0 mobiluriza">
+        <!-- Start Cart Area -->
+        <div class="cart-area ptb-60  backgroundWhite">
+            <div class="container p-0">
+                <form>
+                    <div class="row ">
+                        <div class="col-sm-12 checkout-details ">
+                            <div class="rectangle">
+                                <h3 class="title"> {{$t('cartItems.choosePaymentMethod')}}</h3>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="payButtonebi">
+                                    <div class="cardButt" @click="sendPayment('card')">
+                                        <span>
+                                            {{$t('cartItems.payByCard')}}
+                                        </span>
+                                    </div>
+                                    <div class="cardButt" @click="sendPayment('cash')">
+                                        {{$t('cartItems.payByCash')}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-sm-12 backgroundGray short">
+                            <div class="racxa">
+                                <div class="cart-table table-responsive">
+                                    <table class="table table-bordered webertela">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">{{$t('cartItems.details')}}</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>{{$t('cartItems.fullPrice')}} <span style="float:right"><b>${{parseFloat(cartTotal + 10).toFixed(2)}}</b></span></td>
+                                            </tr>
+                                            <nuxt-link to="/checkout" class="btn btn-checkout">Buy</nuxt-link>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!-- End Cart Area -->
+    </div> 
+
+    <v-dialog v-model="cashDialog" max-width="388px">
+        <v-container>
+                    <v-row>
+        <v-card>
+            <v-card-title>
+                <span class="headline">Cash Payment</span>
+            </v-card-title>
+            <v-card-text>
+                    Order paid by cash
+                <div class="login-content">
+                    <div class="row mt-10 mb-10">
+                        <div class="col-md-12">
+                            <div class="product-cart-btn" @click="closeDialog">
+                                <a class="btn btn-primary btn-august">Close</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </v-card-text>
+        </v-card>
+         </v-row>
+                </v-container>
+        <div class="formiza">
+
+        </div>
+
+    </v-dialog>
+    <!-- End Checkout Area -->
+</div>
+</template>
+
+<style scoped>
+
+
+
+</style>
+
+<script>
+import firebase from '../../plugins/firebase';
+export default {
+    data() {
+        return {
+            personDetails: {
+                fullName: '',
+                address: '',
+                city: '',
+                email: '',
+                phone: '',
+                createdAt: new Date()
+            },
+            cashDialog: false,
+            e1: 1
+        }
+    },
+    computed: {
+        cart() {
+            return this.$store.getters.cart
+        },
+        cartTotal() {
+            return this.$store.getters.totalAmount
+        }
+    },
+    methods: {
+        add() {
+            const cartData = {
+                details: this.personDetails,
+                items: this.cart
+            }
+            const db = firebase.firestore();
+            const dbOrderRef = db.collection('orders');
+            dbOrderRef.add(cartData);
+            this.$toast.success(`Thanks for the order`, {
+                icon: 'fas fa-cart-plus'
+            });
+            this.$store.dispatch('cartEmpty')
+            this.$router.push("/");
+        },
+        sendPayment(type) {
+            if(type == 'cash'){
+                this.cashDialog = true;
+            }
+            else {
+                this.$emit('onPaymentType', type);
+            }
+        },
+        closeDialog(){
+            this.cashDialog = false;
+            this.$store.commit('CART_EMPTY');
+            this.$router.push('/');
+        },
+    }
+}
+</script>

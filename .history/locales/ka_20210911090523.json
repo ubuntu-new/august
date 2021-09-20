@@ -1,0 +1,21 @@
+{
+    "navs": {
+      "about": {"title": "ჩვენს შესახებ", "link": "about"}, 
+      "shop": {"title": "მაღაზია", "link": "shop"}, 
+      "blog": {"title": "ბლოგი", "link": "blog"},
+      "contact": {"title": "კონტაქტი", "link": "contact"},
+      "faq": {"title": "FAQ", "link": "faq"}
+    },
+    "cartItems": {
+      "price": "ფასი",
+      "choosePaymentMethod": "ამოირჩეთ გადახდის მეთოდი",
+      "payByCard": "გადახდა ბარათით",
+      "payByCash": "გადახდა ნაღდი ფულით",
+      "details": "დეტალურად",
+      "fullPrice": "სულ",
+      "buy": "შეძენა",
+      "product": "პროდუქტი",
+      "quantity": "რაოდენობა",
+      "comment": "კომენტარი"
+    }
+  }

@@ -1,0 +1,41 @@
+{
+    "navs": {
+      "about": {"title": "ჩვენს შესახებ", "link": "about"}, 
+      "shop": {"title": "მაღაზია", "link": "shop"}, 
+      "blog": {"title": "ბლოგი", "link": "blog"},
+      "contact": {"title": "კონტაქტი", "link": "contact"},
+      "faq": {"title": "FAQ", "link": "faq"},
+      "login": "შესვლა",
+      "logout": "გამოსვლა",
+      "signup": "რეგისტრაცია"
+    },
+    "cartItems": {
+      "price": "ფასი",
+      "choosePaymentMethod": "ამოირჩეთ გადახდის მეთოდი",
+      "payByCard": "გადახდა ბარათით",
+      "payByCash": "გადახდა ნაღდი ფულით",
+      "details": "დეტალურად",
+      "fullPrice": "სულ",
+      "buy": "შეძენა",
+      "product": "პროდუქტი",
+      "quantity": "რაოდენობა",
+      "bag": "თქვენი კალათა",
+      "аdditionalInfo": "დამატებითი ინფორმაცია",
+      "checkout": "შეძენა",
+      "writeComment": "შეიყვანეთ კომენტარი",
+      "district": "უბანი",
+      "address": "მისამართი",
+      "city": "ქალაქი",
+      "email": "ელ. ფოსტა",
+      "phone": "საკონტაქტო ტელეფონი",
+      "proceed": "გაგრძელება",
+      "contact": "კონტაქტი",
+      "follow": "გამოგვყევი",
+      "terms": "წესები და პირობები",
+      "privacy": "Კონფიდენციალურობის პოლიტიკა",
+      "allRights": "ყველა უფლება დაცულია",
+      "feautured": "რჩეული",
+      "blog": "რჩეული",
+      "comment": "კომენტარი"
+    }
+  }

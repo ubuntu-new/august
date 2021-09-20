@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'Noto Serif';
+    src: url('NotoSerif-Regular.eot');
+    src: url('NotoSerif-Regular.eot?#iefix') format('embedded-opentype'),
+        url('NotoSerif-Regular.woff2') format('woff2'),
+        url('NotoSerif-Regular.woff') format('woff'),
+        url('NotoSerif-Regular.ttf') format('truetype'),
+        url('NotoSerif-Regular.svg#NotoSerif-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Noto Serif Georgian';
+    src: url('NotoSerifGeorgian-Regular.eot');
+    src: url('NotoSerifGeorgian-Regular.eot?#iefix') format('embedded-opentype'),
+        url('NotoSerifGeorgian-Regular.woff2') format('woff2'),
+        url('NotoSerifGeorgian-Regular.woff') format('woff'),
+        url('NotoSerifGeorgian-Regular.ttf') format('truetype'),
+        url('NotoSerifGeorgian-Regular.svg#NotoSerifGeorgian-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
